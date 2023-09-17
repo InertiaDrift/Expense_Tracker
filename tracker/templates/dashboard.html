@@ -1,0 +1,33 @@
+{% extends 'master.html' %}
+
+{% block content %}
+<h2 class ="heading">Your Expenses</h2>
+
+<table class="styled-table">
+    <thead>
+    <tr>
+        <th>Notes</th>
+        <th>Amount</th>
+        <th>Category</th>
+        <th>Tags</th>
+    </tr>
+    </thead>
+    {% for expense in expenses %}
+        <tbody>
+        <tr>
+            <td>{{ expense.notes }}</td>
+            <td>{{ expense.amount }}</td>
+            <td>{{ expense.category }}</td>
+            <td>{{ expense.tags }}</td>
+        </tr>
+    </tbody>
+        
+    {% empty %}
+        <tr>
+            <td colspan="4">No expenses to display.</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<a href="{% url 'add_expense' %}">Add Expense</a>
+{% endblock %}

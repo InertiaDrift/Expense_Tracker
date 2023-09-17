@@ -1,0 +1,29 @@
+{% load static %}
+
+<html>
+<link rel="stylesheet" href="{% static 'testing.css' %}">
+<head>
+ <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+  <div class="topnav">
+    <a href="/">HOME</a> |
+    <a href="/dashboard">DASHBOARD</a>
+    <div class="right-links">
+      <a href="/accounts/login">LOGIN</a>
+      <a href="/accounts/logout">LOGOUT</a>
+    </div>
+  </div>
+  
+
+{% block content %}
+{% endblock %}
+
+<footer>
+  <p>Author: Owais Khan
+  <a href="mailto:owaiskhanapp@gmail.com">owaiskhanapp@gmail.com</a></p>
+</footer> 
+
+</body>
+</html>

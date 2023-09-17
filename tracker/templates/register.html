@@ -1,0 +1,14 @@
+{% extends 'master.html' %}
+
+
+
+{% block content %}
+{% block registration_form %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+</form>
+{% endblock %}
+{% endblock %}
+
